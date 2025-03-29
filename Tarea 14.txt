@@ -1,0 +1,12 @@
+Tarea 14/votar.js
+
+// 4. Verifica si una persona puede votar o no (mayor o igual a 18) e indica cuántos años le faltan
+ let edad =prompt("Ingrese la edad: ");
+ let anios =18-edad
+ if(edad >=18)
+  else
+ console.log("Puede ejercer el voto")
+ console.log("Es menor de edad le falta", +anios+" años");
+ 
+ Ingrese edad:12
+ Es menor de edad le falta 6 años

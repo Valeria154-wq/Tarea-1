@@ -1,0 +1,10 @@
+Tarea 1/radio.js
+
+ let radio = prompt("Ingrese el radio del circulo en metros"); let area = Math.PI* Math.pow(radio,2);
+ console.log("El area del circulo es: "+area);
+ let circunferencia = 2 * Math.PI * radio;
+ console.log("La circunferencia del circulo es: "+circunferencia);
+ 
+ Ingrese el radio del circulo en metros5
+ El area del circulo es: 78.53981633974483
+ La circunferencia del circulo es: 31.41592653589793

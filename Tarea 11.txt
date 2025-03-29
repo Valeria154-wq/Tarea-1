@@ -1,0 +1,29 @@
+Tarea 11/notas.js
+
+let cuenta = prompt("Ingrese el numero de cuenta:")
+ let nombre =prompt("Ingrese el nombre: ")
+ let apellido = prompt("Ingrese el apellido: ")
+ let max =100
+ let min =20
+ let n1 =Math.random() * (max - min) + min; 
+ let n2 =Math.random() * (max - min) + min;
+ let n3 =Math.random() * (max - min) + min;
+ let n4 =Math.random() * (max - min) + min;
+ let n5 =Math.random() * (max - min) + min;
+ let resultado = (n1+n2+n3+n4+n5)/5
+ 
+ console.log("Numero de Cuenta", cuenta)
+ console.log("Nombre y Apellido", nombre, apellido)
+ console.log ("Notas: ",n1,n2, n3, n4,n5)
+ if (resultado >=70)
+ console.log("Aprobado")
+ else
+ console.log("Reprobado")
+ 
+ Ingrese el numero de cuenta:47922
+ Ingrese el nombre: sara
+ Ingrese el apellido: hernandez
+ Numero de Cuenta 47922
+ Nombre y Apellido sara hernandez
+ Notas:  38.74158062004479 63.665853793735785 51.414392768197516 40.1280468453707 59.80188711370381
+ Reprobado

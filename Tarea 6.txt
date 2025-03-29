@@ -1,0 +1,12 @@
+Tarea 6/volumen.js
+
+let a = prompt("Ingrese el valor de a: ");
+ let b = prompt("Ingrese el valor de b: ");
+ let pi = Math. PI; // sacamos la funcion de pi de la libreria de Math
+ let result = (4/3)*(pi*Math.pow(a,2)*b);
+ //Potencia 52 = Math (5,2)
+ console.log("El Valor del Volumen es: "+result);
+ 
+ Ingrese el valor de a: 6
+ Ingrese el valor de b: 12
+ El Valor del Volumen es: 1809.5573684677206

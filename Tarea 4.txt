@@ -1,0 +1,29 @@
+Tarea 4/calcular el salario.js
+
+horas = prompt("Horas Trabajadas por semana: ");
+ pago = prompt("Pago x Hora: ");
+ salarios = horas *pago;
+ salarioM = horas *pago*4;
+ dedRap = salarios*0.015; 
+ dedRapM = salarios*0.015*4;
+ dedSins = salarios*0.01;
+ dedSinM = salarios*0.01*4;
+ console.log("Sueldo bruto Semanal: L"+salarios);
+ console.log("Sueldo bruto Mensual: L"+salarioM);
+ console.log("Deduccion RAP-FOSOVI 1.5% Semanal: L"+dedRap);
+ console.log("Deduccion RAP-FOSOVI 1.5% Mensual: L"+dedRapM);
+ console.log("Deduccion sindicatos 1% Semanal: L"+dedSins);
+ console.log("Deduccion sindicatos 1% Mensual: L"+dedSinM);  
+ console.log("Salario Neto Semanal: L"+(salarios-dedRap-dedSins));
+ console.log("Salario Neto Mensual: L"+(salarioM-dedRapM-dedSinM));
+ 
+ Horas Trabajadas por semana: 50
+ Pago x Hora: 30
+ Sueldo bruto Semanal: L1500
+ Sueldo bruto Mensual: L6000
+ Deduccion RAP-FOSOVI 1.5% Semanal: L22.5
+ Deduccion RAP-FOSOVI 1.5% Mensual: L90
+ Deduccion sindicatos 1% Semanal: L15
+ Deduccion sindicatos 1% Mensual: L60
+ Salario Neto Semanal: L1462.5
+ Salario Neto Mensual: L5850

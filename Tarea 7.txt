@@ -1,0 +1,14 @@
+Tarea 7/split.js
+
+let cadena ="Hola Mundo"
+ console.log("Este es un split: "+cadena.split(" ")); 
+ let s =cadena.split(" ");
+ console.log("El valor del indice de la s[0]: "+s[0]); 
+ console.log("El valor del indice de la s[1]: "+s[1]);
+ console.log("El valor del indice de la s[1][2]: "+s[1][2]);
+ 
+ 
+ Este es un split: Hola,Mundo
+ El valor del indice de la s[0]: Hola
+ El valor del indice de la s[1]: Mundo
+ El valor del indice de la s[1][2]: n

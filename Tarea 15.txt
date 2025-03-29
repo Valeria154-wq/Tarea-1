@@ -1,0 +1,38 @@
+Tarea 15/viajar.js
+
+console.log ("Menu de Viajes\n1. La Mosquitia\n2. Ruinas de Copan\n3. La Biosfera del Rio Platano\n4. Salir\n")
+ let op =Number(prompt("Ingrese opcion para viajar:"))
+ 
+ let subtotal =0.0
+ 
+ if (op ==1){
+     let grupo =Number(prompt("Ingrese cuantos grupos de 3 van: "))
+     let personas = Number(prompt("ingrese numero de personas extras: "))
+     subtotal = 5000*grupo +(personas*1000)
+     let pa=prompt("Conocimiento de primeros auxilios: Si/No: ")
+     if (pa.toLowerCase()=='si')
+         subtotal+=300*(grupo*3 + personas)
+     
+     total=(grupo*3 + personas)*25+subtotal
+     
+     console.log("Total a pagar es: L.", Number.parseFloat(total).toFixed(2))
+ }
+ else if (op ==2){
+ 
+     console.log("Total a pagar es: L.",Number.parseFloat(total).toFixed(2))
+ }
+ else
+     console.log("He salido del programa")
+   
+ 
+ Menu de Viajes
+ 1. La Mosquitia
+ 2. Ruinas de Copan
+ 3. La Biosfera del Rio Platano
+ 4. Salir
+ 
+ Ingrese opcion para viajar:1
+ Ingrese cuantos grupos de 3 van: 2
+ ingrese numero de personas extras: 1
+ Conocimiento de primeros auxilios: Si/No: si
+ Total a pagar es: L. 13275.00

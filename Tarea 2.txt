@@ -1,0 +1,11 @@
+Tarea 2/area.js
+
+/*Calcular y leer el area de un rectangulo*/
+ let base =prompt("Ingrese la base del rectangulo"); 
+ let altura = prompt("Ingrese la altura del rectangulo"); 
+ let area = base * altura;
+ console.log("El area del rectangulo es: "+area);
+ 
+ Ingrese la base del rectangulo4
+ Ingrese la altura del rectangulo6
+ El area del rectangulo es: 24

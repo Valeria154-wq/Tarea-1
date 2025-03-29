@@ -1,0 +1,15 @@
+Tarea 3/la distancia entre dos puntos.js
+
+//Calcular la distancia de dos puntos
+ let x1 = prompt("Ingrese el valor de x1"); 
+ let y1 = prompt("Ingrese el valor de y1"); 
+ let x2 = prompt("Ingrese el valor de x2"); 
+ let y2 = prompt("Ingrese el valor de y2");
+ let distancia = Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2));
+ console.log("La distancia entre los dos puntos es: "+distancia);
+ 
+ Ingrese el valor de x130
+ Ingrese el valor de y116
+ Ingrese el valor de x240
+ Ingrese el valor de y218
+ La distancia entre los dos puntos es: 10.198039027185569

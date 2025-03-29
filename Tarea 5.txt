@@ -1,0 +1,13 @@
+Tarea 5/calcular el interes.js
+
+let depositop = prompt("ingrese el deposito: L. ");
+ let interes = prompt("ingrese el interes: ")
+ interes/=100
+ let anio =prompt("ingrese los años a calcular: ")
+ let resultado = depositop*Math.pow((1+interes), anio)
+ console.log("El interes calculado en"+anio+"es: "+resultado)
+ 
+ ingrese el deposito: L. 2000
+ ingrese el interes: 5
+ ingrese los años a calcular: 6
+ El interes calculado en6es: 2680.191281250001

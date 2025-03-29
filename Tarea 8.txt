@@ -1,0 +1,26 @@
+Tarea 8/kilometros recorridos.js
+
+let km = prompt("Ingrese los kilometros recorridos = ");
+ let dias = prompt("Ingrese los dias = "); 
+ let result1 = km * 0.75;  
+ let seguro = 800;
+ let result2 = dias * 400;
+ let subtotal = result1 + result2 + seguro; 
+ let imp = subtotal * 0.10; 
+ let total_a_pagar = subtotal + imp;
+ console.log(result1);
+ console.log(seguro);
+ console.log(result2);
+ console.log("subtotal: " + subtotal);
+ console.log(imp);
+ console.log("total a pagar: " + total_a_pagar);
+ 
+ 
+ Ingrese los kilometros recorridos = 700
+ Ingrese los dias = 3
+ 525
+ 800
+ 1200
+ subtotal: 2525
+ 252.5
+ total a pagar: 2777.5

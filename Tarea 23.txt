@@ -1,0 +1,57 @@
+
+Tarea 23/Arreglo grande.js
+
+
+const readline = require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// Función para encontrar el menor elemento y su posición
+const encontrarMenor = (arr) => {
+    if (arr.length === 0) {
+        console.log("El arreglo está vacío.");
+        return;
+    }
+
+    let menor = arr[0];
+    let posicion = 0;
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < menor) {
+            menor = arr[i];
+            posicion = i;
+        }
+    }
+
+    console.log(`El elemento menor es ${menor} y se encuentra en la posición ${posicion}.`);
+};
+
+// Solicitar datos al usuario
+rl.question("Ingrese el tamaño del arreglo: ", (tam) => {
+    let n = parseInt(tam);
+    if (isNaN(n) || n <= 0) {
+        console.log("Por favor, ingrese un número válido.");
+        rl.close();
+        return;
+    }
+
+    let arreglo = [];
+    console.log("Ingrese los elementos del arreglo:");
+
+    const pedirElemento = (indice) => {
+        if (indice < n) {
+            rl.question(`Elemento ${indice + 1}: `, (valor) => {
+                arreglo.push(parseFloat(valor));
+                pedirElemento(indice + 1);
+            });
+        } else {
+            encontrarMenor(arreglo);
+            rl.close();
+        }
+    };
+
+    pedirElemento(0);
+});

@@ -1,0 +1,11 @@
+Tarea 27/Produccion de leche.js
+
+const produccionLeche = Array.from({ length: 30 }, () => (Math.random() * (30 - 10) + 10).toFixed(2));
+
+const vacaMax = produccionLeche.indexOf(Math.max(...produccionLeche).toFixed(2)) + 1;
+const vacaMin = produccionLeche.indexOf(Math.min(...produccionLeche).toFixed(2)) + 1;
+const promedio = (produccionLeche.reduce((acc, val) => acc + parseFloat(val), 0) / produccionLeche.length).toFixed(2);
+
+console.log(`La vaca ${vacaMax} produjo más leche con ${Math.max(...produccionLeche).toFixed(2)} litros.`);
+console.log(`La vaca ${vacaMin} produjo menos leche con ${Math.min(...produccionLeche).toFixed(2)} litros.`);
+console.log(`El promedio de producción de leche es de ${promedio} litros por vaca.`);

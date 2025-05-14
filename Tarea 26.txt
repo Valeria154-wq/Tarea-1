@@ -1,0 +1,29 @@
+Tarea 26/Arreglo de enteros entrada.js
+
+const readline = require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// Función para determinar si un número es par o impar
+const esPar = (numero) => {
+    return numero % 2 === 0;
+};
+
+// Solicitar lista de números al usuario
+rl.question("Ingrese una lista de números separados por espacio: ", (entrada) => {
+    const numeros = entrada.split(" ").map(num => parseInt(num));
+
+    console.log("\nResultados:");
+    numeros.forEach(numero => {
+        if (!isNaN(numero)) {
+            console.log(`El número ${numero} es ${esPar(numero) ? "par" : "impar"}.`);
+        } else {
+            console.log(`"${numero}" no es un número válido.`);
+        }
+    });
+
+    rl.close();
+});

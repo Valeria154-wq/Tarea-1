@@ -1,0 +1,28 @@
+Tarea 28/Facturacion automizada en ferreteria.js
+
+const precios = {
+    "A001": 150,
+    "A002": 225,
+    "A003": 300
+};
+
+const ventas = [
+    { codigo: "A001", cantidad: 2 },
+    { codigo: "A002", cantidad: 1 },
+    { codigo: "A003", cantidad: 5 }
+];
+
+let subtotal = 0;
+
+ventas.forEach(({ codigo, cantidad }) => {
+    const totalArticulo = precios[codigo] * cantidad;
+    console.log(`Artículo ${codigo}: ${cantidad} unidades x $${precios[codigo]} = $${totalArticulo}`);
+    subtotal += totalArticulo;
+});
+
+const ISV = (subtotal * 0.15).toFixed(2);
+const totalGeneral = (subtotal + parseFloat(ISV)).toFixed(2);
+
+console.log(`\nSubtotal: $${subtotal}`);
+console.log(`ISV (15%): $${ISV}`);
+console.log(`Total general: $${totalGeneral}`);

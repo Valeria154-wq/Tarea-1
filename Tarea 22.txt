@@ -1,0 +1,76 @@
+Tarea 22/Alquiler de peliculas.js
+@@ -0,0 +1,76 @@
+
+const readline = require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// Configuración de precios y descuentos
+const peliculas = {
+    1: { descripcion: "Drama", precio: 8.00, estreno: true },
+    2: { descripcion: "Terror", precio: 10.00, estreno: false },
+    3: { descripcion: "Acción", precio: 9.00, estreno: true }
+};
+
+const descuentoClienteAntiguo = 0.50;
+const incrementoEstreno = 1.50;
+const descuentoAccionFinde = 0.10;
+
+// Función para calcular el total
+const calcularTotal = (tipoPelicula, diasAlquiler, clienteAntiguo, diaSemana) => {
+    if (!peliculas[tipoPelicula]) {
+        console.log("Opción inválida.");
+        return;
+    }
+
+    let pelicula = peliculas[tipoPelicula];
+    let total = pelicula.precio * diasAlquiler;
+
+    // Descuento por cliente antiguo
+    if (clienteAntiguo && diasAlquiler > 1) {
+        total -= descuentoClienteAntiguo * (diasAlquiler - 1);
+    }
+
+    // Incremento por estreno
+    if (pelicula.estreno) {
+        total += incrementoEstreno * diasAlquiler;
+    }
+
+    // Descuento por acción en fin de semana
+    if (tipoPelicula === 3 && ["viernes", "sábado", "domingo"].includes(diaSemana.toLowerCase())) {
+        total -= total * descuentoAccionFinde;
+    }
+
+    console.log(`Total a pagar: ${total.toFixed(2)} Lps.`);
+};
+
+// Menú
+const mostrarMenu = () => {
+    console.log("\nSeleccione el tipo de película:");
+    console.log("1 - Drama (8.00 Lps/día)");
+    console.log("2 - Terror (10.00 Lps/día)");
+    console.log("3 - Acción (9.00 Lps/día)");
+    console.log("4 - Salir");
+
+    rl.question("Ingrese opción: ", (opcion) => {
+        if (opcion === "4") {
+            console.log("Gracias por usar el sistema.");
+            rl.close();
+            return;
+        }
+
+        rl.question("Ingrese días de alquiler: ", (dias) => {
+            rl.question("¿Es cliente por más de 2 años? (si/no): ", (cliente) => {
+                rl.question("Día de la semana del alquiler: ", (diaSemana) => {
+                    calcularTotal(parseInt(opcion), parseInt(dias), cliente.toLowerCase() === "si", diaSemana);
+                    mostrarMenu();
+                });
+            });
+        });
+    });
+};
+
+mostrarMenu();

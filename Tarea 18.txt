@@ -1,0 +1,48 @@
+Tarea 18/Matriz.js
+let rows1 =prompt("Ingrese tamaño de filas de la matrix 1: ")
+let cols1 =prompt("Ingrese tamaño de columnas de la matrix 1: ")
+let rows2 =prompt("Ingrese tamaño de filas de la matrix 2: ")
+let cols2 =prompt("Ingrese tamaño de columnas de la matrix 2: ")
+
+
+let max =10
+let min =-10
+let matrix1 = []
+let matrix2 =[]
+let matrixResult =[]
+  for (let i = 0; i < rows1; i++) {
+    let row = [];
+    for (let j = 0; j < cols1; j++) {
+     let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+      row.push(randomNum);
+    }
+    matrix1.push(row);
+ }
+ for (let i = 0; i < rows2; i++) {
+    let row = [];
+    for (let j = 0; j < cols2; j++) {
+     let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+      row.push(randomNum);
+    }
+    matrix2.push(row);
+ }
+ for (let i = 0; i < rows1; i++) {
+    let row = [];
+    for (let j = 0; j < cols2; j++) {
+      row.push(0);
+    }
+    matrixResult.push(row);
+ }
+
+console.log(matrix1)
+console.log(matrix2)
+console.log(matrixResult)
+
+if (cols1 !== rows2) {
+    console.log("El número de columnas de la primera matriz debe coincidir con el número de filas de la segunda matriz.");
+    }
+else{
+    for (let i = 0; i < rows1; i++) {
+        for (let j = 0; j < cols2; j++) {
+            for (let k = 0; k < cols1; k++) {
+                matrixResult[i][j] += matrix1[i][k] * matrix2[k][j];

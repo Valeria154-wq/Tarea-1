@@ -1,0 +1,35 @@
+Tarea 19/Lista de personas.js
+
+/// Creación de la lista de personas
+let lista = [];
+for (let i = 0; i < 3; i++) {
+  let persona = {
+    id: Number(prompt("¿Cuál es tu id? ")),
+    nombre: prompt("¿Cuál es tu nombre? "),
+    edad: Number(prompt("¿Cuál es tu edad? ")),
+    ocupacion: prompt("¿Cuál es tu ocupación? ")
+  };
+  lista.push(persona); // Agregar un nuevo objeto a la lista
+}
+// Búsqueda de personas
+let buscar = prompt("¿Desea buscar a una persona? (Si/No): ").toLowerCase();
+while (buscar === "si") {
+  let id = Number(prompt("¿Cuál es el id de la persona que buscas?"));
+  let personaEncontrada = null;
+  // Reemplazo de find con un bucle for
+  for (let i = 0; i < lista.length; i++) {
+    if (lista[i].id === id) {
+      personaEncontrada = lista[i];
+      break;
+    }
+  }
+  if (personaEncontrada) {
+    console.log("Hola, me llamo",personaEncontrada.nombre," y soy ",personaEncontrada.ocupacion);
+  } else {
+    console.log("No se encontró a ninguna persona con ese id.");
+  }
+  buscar = prompt("¿Desea buscar a otra persona? (Si/No): ").toLowerCase();
+}
+// Mostrar la lista de personas
+for (let i = 0; i < lista.length; i++) {
+  console.log("Hola, me llamo ", lista[i].nombre, "y soy ", lista[i].ocupacion);

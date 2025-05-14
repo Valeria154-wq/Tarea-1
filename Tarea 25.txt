@@ -1,0 +1,55 @@
+Tarea 25/ventas de almancen.js
+
+const readline = require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+const almacenes = 4;
+const departamentos = 10;
+let ventas = new Array(almacenes).fill(0).map(() => new Array(departamentos).fill(0));
+
+const ingresarVentas = (almacen, depto) => {
+    if (almacen < almacenes) {
+        if (depto < departamentos) {
+            rl.question(`Ingrese las ventas del almacén ${almacen + 1}, departamento ${depto + 1}: `, (venta) => {
+                ventas[almacen][depto] = parseFloat(venta) || 0;
+                ingresarVentas(almacen, depto + 1);
+            });
+        } else {
+            ingresarVentas(almacen + 1, 0);
+        }
+    } else {
+        calcularTotales();
+        rl.close();
+    }
+};
+
+const calcularTotales = () => {
+    let totalPorDepartamento = new Array(departamentos).fill(0);
+    let totalPorAlmacen = new Array(almacenes).fill(0);
+    let totalGeneral = 0;
+
+    // Calcular totales
+    for (let i = 0; i < almacenes; i++) {
+        for (let j = 0; j < departamentos; j++) {
+            totalPorDepartamento[j] += ventas[i][j];
+            totalPorAlmacen[i] += ventas[i][j];
+            totalGeneral += ventas[i][j];
+        }
+    }
+
+    console.log("\nTotal de ventas por departamento:");
+    totalPorDepartamento.forEach((total, i) => console.log(`Departamento ${i + 1}: ${total.toFixed(2)} Lps.`));
+
+    console.log("\nTotal de ventas por almacén:");
+    totalPorAlmacen.forEach((total, i) => console.log(`Almacén ${i + 1}: ${total.toFixed(2)} Lps.`));
+
+    console.log(`\nTotal de ventas de toda la tienda: ${totalGeneral.toFixed(2)} Lps.`);
+};
+
+// Iniciar ingreso de datos
+console.log("Ingrese las ventas por almacén y departamento:");
+ingresarVentas(0, 0);

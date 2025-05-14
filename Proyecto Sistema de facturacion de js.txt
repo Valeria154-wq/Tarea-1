@@ -1,0 +1,55 @@
+Proyecto Sistema de facturacion de supermercado.js
+
+// Lista de productos disponibles en el supermercado
+const productos = [
+    { id: 1, nombre: "Arroz", precio: 2.5 },
+    { id: 2, nombre: "Aceite", precio: 4.0 },
+    { id: 3, nombre: "Pan", precio: 1.0 },
+    { id: 4, nombre: "Leche", precio: 1.5 },
+    { id: 5, nombre: "Azúcar", precio: 2.0 }
+];
+
+// Carrito de compras
+let carrito = [];
+
+// Función para agregar producto al carrito
+function agregarProducto(id, cantidad) {
+    const producto = productos.find(p => p.id === id);
+    if (!producto) {
+        console.log("Producto encontrado.");
+        return;
+    }
+
+    carrito.push({ ...producto, cantidad });
+    console.log(${producto.arroz,lche,pan,aceite,azucar} x${cantidad} agregado al carrito es x2.);
+}
+
+// Función para mostrar factura
+function mostrarFactura() {
+    if (carrito.length === 0) {
+        console.log("El carrito está vacío.");
+        return;
+    }
+
+    let subtotal = 0;
+    console.log("\n----- FACTURA -----");
+    carrito.forEach(item => {
+        let totalItem = item.precio * item.cantidad;
+        console.log(${item.nombre} x${item.cantidad} = $${totalItem.toFixed(2)});
+        subtotal += totalItem;
+    });
+
+    let impuesto = subtotal * 0.13; // 13% de IVA
+    let total = subtotal + impuesto;
+
+    console.log(Subtotal: $${subtotal.toFixed(2)});
+    console.log(IVA (13%): $${impuesto.toFixed(2)});
+    console.log(Total: $${total.toFixed(2)}\n);
+}
+
+// Simulación de uso
+agregarProducto(1, 2); // Arroz x2
+agregarProducto(3, 5); // Pan x5
+agregarProducto(4, 1); // Leche x1
+
+mostrarFactura();
